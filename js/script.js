@@ -112,6 +112,52 @@ function timer () {
                 numberTwo.lastElementChild.className = "";
                 break;
         }
+        switch (firstSecond) {
+            case 0:
+                numberThree.firstElementChild.className = "borderTop borderLeft borderRight";
+                numberThree.lastElementChild.className = "borderBottom borderLeft borderRight";
+                break;
+            case 1:
+                numberThree.firstElementChild.className = "borderLeft";
+                numberThree.lastElementChild.className = "borderLeft";
+                break;
+            case 2:
+                numberThree.firstElementChild.className = "borderTop borderRight borderBottom";
+                numberThree.lastElementChild.className = "borderLeft borderBottom";
+                break;
+            case 3:
+                numberThree.firstElementChild.className = "borderTop borderRight borderBottom";
+                numberThree.lastElementChild.className = "borderRight borderBottom";
+                break;
+            case 4:
+                numberThree.firstElementChild.className = "borderLeft borderRight borderBottom";
+                numberThree.lastElementChild.className = "borderRight";
+                break;
+            case 5:
+                numberThree.firstElementChild.className = "borderTop borderLeft borderBottom";
+                numberThree.lastElementChild.className = "borderRight borderBottom";
+                break;
+            case 6:
+                numberThree.firstElementChild.className = "borderLeft borderBottom borderTop";
+                numberThree.lastElementChild.className = "borderRight borderLeft borderBottom";
+                break;
+            case 7:
+                numberThree.firstElementChild.className = "borderTop borderRight borderBottom";
+                numberThree.lastElementChild.className = "borderRight";
+                break;
+            case 8:
+                numberThree.firstElementChild.className = "borderTop borderLeft borderBottom borderRight";
+                numberThree.lastElementChild.className = "borderLeft borderBottom borderRight";
+                break;
+            case 9:
+                numberThree.firstElementChild.className = "borderTop borderLeft borderBottom borderRight";
+                numberThree.lastElementChild.className = "borderBottom borderRight";
+                break;
+            default:
+                numberThree.firstElementChild.className = "";
+                numberThree.lastElementChild.className = "";
+                break;
+        }
         
     }, 1000)
 }
