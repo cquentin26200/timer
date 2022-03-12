@@ -1,3 +1,7 @@
+body {
+    display: flex;
+}
+
 ul {
     list-style: none;
 }
@@ -24,4 +28,10 @@ ul {
     border-bottom: 3px solid black;
     height: 6rem;
     width: 6rem;
+}
+
+span {
+    font-size: 7rem;
+    display: flex;
+    align-items: center;
 }
