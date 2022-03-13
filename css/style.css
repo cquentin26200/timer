@@ -1,7 +1,11 @@
-.groupTimer {
+.groupTimer, .realTime {
     display: flex;
     margin-top: 5rem;
     justify-content: center;
+}
+
+.realTime {
+    font-size: 7rem;
 }
 
 ul {
