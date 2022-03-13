@@ -4,27 +4,28 @@ const numberThree = document.querySelector(".numberThree");
 const numberFour = document.querySelector(".numberFour");
 
 let firstMinute = 1;
-let secondMinute = 4;
+let secondMinute = undefined;
 let firstSecond = 0;
 let secondSecond = 3;
 
 function timer () {
     setInterval(() => {
-        if (firstSecond === 0 && secondSecond === 0) {
-            secondMinute--;
+        if (firstSecond === 0 && secondSecond === 0 && firstMinute != 0) {
             firstSecond = 6;
-            secondSecond = 0;
+            if (firstMinute > 0 && secondMinute > 0) {
+                secondMinute--;
+            } else if (firstMinute > 0 && secondMinute === undefined) {
+                firstMinute--;
+            } else if (firstMinute > 0 && secondMinute === 0) {
+                secondMinute = undefined;
+                firstMinute = 9;
+            }
         } else if (firstSecond > 0 && secondSecond === 0) {
-            secondSecond = 9;
             firstSecond--;
+            secondSecond = 9;
         } else if (secondSecond > 0) {
             secondSecond--;
-        } if (firstSecond === 6 && secondSecond === 0 && firstMinute === 1 && secondMinute === 0) {
-            firstMinute = 9;
-            secondMinute = undefined;
-        } else if (firstMinute > 0 && secondMinute === undefined && firstSecond === 6 && secondSecond === 0) {
-            firstMinute--;
-        }
+        } 
         switch (firstMinute) {
             case 0:
                 numberOne.firstElementChild.className = "borderTop borderLeft borderRight";
