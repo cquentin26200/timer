@@ -4,9 +4,9 @@ const numberThree = document.querySelector(".numberThree");
 const numberFour = document.querySelector(".numberFour");
 
 let firstMinute = 1;
-let secondMinute = 9;
+let secondMinute = 4;
 let firstSecond = 0;
-let secondSecond = 0;
+let secondSecond = 3;
 
 function timer () {
     setInterval(() => {
@@ -19,7 +19,12 @@ function timer () {
             firstSecond--;
         } else if (secondSecond > 0) {
             secondSecond--;
-        } 
+        } if (firstSecond === 6 && secondSecond === 0 && firstMinute === 1 && secondMinute === 0) {
+            firstMinute = 9;
+            secondMinute = undefined;
+        } else if (firstMinute > 0 && secondMinute === undefined && firstSecond === 6 && secondSecond === 0) {
+            firstMinute--;
+        }
         switch (firstMinute) {
             case 0:
                 numberOne.firstElementChild.className = "borderTop borderLeft borderRight";
