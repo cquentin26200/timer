@@ -12,10 +12,10 @@ let secondMinuteCounter = undefined;
 let firstSecondCounter = 5;
 let secondSecondCounter = 7;
 
-let firstMinutesCountdown = 1;
+let firstMinutesCountdown = 0;
 let secondMinutesCountdown = undefined;
-let firstSecondsCountdown = 5;
-let secondSecondsCountdown = 7;
+let firstSecondsCountdown = 0;
+let secondSecondsCountdown = 0;
 
 
 const realTime = document.querySelector(".realTime");
@@ -57,9 +57,9 @@ function timer () {
                 firstMinutesCountdown = 1;
                 secondMinutesCountdown = 0;
             } else if (firstMinutesCountdown > 0 && secondMinutesCountdown === undefined) {
-                firstMinutesCountdown++;secondMinutesCountdown
-            } else {
                 firstMinutesCountdown++;
+            } else {
+                secondMinutesCountdown++;
             }
         }
          
