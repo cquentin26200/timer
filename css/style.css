@@ -1,5 +1,7 @@
-body {
+.groupTimer {
     display: flex;
+    margin-top: 5rem;
+    justify-content: center;
 }
 
 ul {
