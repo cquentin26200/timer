@@ -2,11 +2,20 @@ const numberOne = document.querySelector(".numberOne");
 const numberTwo = document.querySelector(".numberTwo");
 const numberThree = document.querySelector(".numberThree");
 const numberFour = document.querySelector(".numberFour");
+const numberFive = document.querySelector(".numberFive");
+const numberSix = document.querySelector(".numberSix");
+const numberSeven = document.querySelector(".numberSeven");
+const numberHeight = document.querySelector(".numberHeight");
 
 let firstMinute = 1;
 let secondMinute = undefined;
 let firstSecond = 5;
 let secondSecond = 7;
+
+let firstMinutes = 1;
+let secondMinutes = 3;
+let firstSeconds = 5;
+let secondSeconds = 7;
 
 function timer () {
     setInterval(() => {
@@ -26,26 +35,27 @@ function timer () {
         } else if (secondSecond > 0) {
             secondSecond--;
         }
-        /*if (secondSecond === 9 && firstSecond === 0) {
-            secondSecond = 0
-            firstSecond = 1;
-        } else if (firstSecond > 0 && secondSecond === 9) {
-            firstSecond++;
-            secondSecond = 0;
-        } else if (secondSecond >= 0) {
-            secondSecond++;
-        } if (firstSecond === 6 && secondSecond === 0) {
-            firstSecond = 0;
-            secondSecond = 0;
-              if (firstMinute === 9 && secondMinute === undefined) {
-                firstMinute = 1;
-                secondMinute = 0;
-            } else if (firstMinute > 0 && secondMinute === undefined) {
-                firstMinute++;
+
+        if (secondSeconds === 9 && firstSeconds === 0) {
+            secondSeconds = 0
+            firstSeconds = 1;
+        } else if (firstSeconds > 0 && secondSeconds === 9) {
+            firstSeconds++;
+            secondSeconds = 0;
+        } else if (secondSeconds >= 0) {
+            secondSeconds++;
+        } if (firstSeconds === 6 && secondSeconds === 0) {
+            firstSeconds = 0;
+            secondSeconds = 0;
+              if (firstMinutes === 9 && secondMinutes === undefined) {
+                firstMinutes = 1;
+                secondMinutes = 0;
+            } else if (firstMinutes > 0 && secondMinutes === undefined) {
+                firstMinutes++;
             } else {
-                secondMinute++;
+                secondMinutes++;
             }
-        } */
+        }
          
         switch (firstMinute) {
             case 0:
@@ -231,7 +241,190 @@ function timer () {
                 numberFour.lastElementChild.className = "";
                 break;
         }
+
+        switch (firstMinutes) {
+            case 0:
+                numberFive.firstElementChild.className = "borderTop borderLeft borderRight";
+                numberFive.lastElementChild.className = "borderBottom borderLeft borderRight";
+                break;
+            case 1:
+                numberFive.firstElementChild.className = "borderLeft";
+                numberFive.lastElementChild.className = "borderLeft";
+                break;
+            case 2:
+                numberFive.firstElementChild.className = "borderTop borderRight borderBottom";
+                numberFive.lastElementChild.className = "borderLeft borderBottom";
+                break;
+            case 3:
+                numberFive.firstElementChild.className = "borderTop borderRight borderBottom";
+                numberFive.lastElementChild.className = "borderRight borderBottom";
+                break;
+            case 4:
+                numberFive.firstElementChild.className = "borderLeft borderRight borderBottom";
+                numberFive.lastElementChild.className = "borderRight";
+                break;
+            case 5:
+                numberFive.firstElementChild.className = "borderTop borderLeft borderBottom";
+                numberFive.lastElementChild.className = "borderRight borderBottom";
+                break;
+            case 6:
+                numberFive.firstElementChild.className = "borderLeft borderBottom borderTop";
+                numberFive.lastElementChild.className = "borderRight borderLeft borderBottom";
+                break;
+            case 7:
+                numberFive.firstElementChild.className = "borderTop borderRight borderBottom";
+                numberFive.lastElementChild.className = "borderRight";
+                break;
+            case 8:
+                numberFive.firstElementChild.className = "borderTop borderLeft borderBottom borderRight";
+                numberFive.lastElementChild.className = "borderLeft borderBottom borderRight";
+                break;
+            case 9:
+                numberFive.firstElementChild.className = "borderTop borderLeft borderBottom borderRight";
+                numberFive.lastElementChild.className = "borderBottom borderRight";
+                break;
+            default:
+                numberFive.firstElementChild.className = "";
+                numberFive.lastElementChild.className = "";
+                break;
+        }
+        switch (secondMinutes) {
+            case 0:
+                numberSix.firstElementChild.className = "borderTop borderLeft borderRight";
+                numberSix.lastElementChild.className = "borderBottom borderLeft borderRight";
+                break;
+            case 1:
+                numberSix.firstElementChild.className = "borderLeft";
+                numberSix.lastElementChild.className = "borderLeft";
+                break;
+            case 2:
+                numberSix.firstElementChild.className = "borderTop borderRight borderBottom";
+                numberSix.lastElementChild.className = "borderLeft borderBottom";
+                break;
+            case 3:
+                numberSix.firstElementChild.className = "borderTop borderRight borderBottom";
+                numberSix.lastElementChild.className = "borderRight borderBottom";
+                break;
+            case 4:
+                numberSix.firstElementChild.className = "borderLeft borderRight borderBottom";
+                numberSix.lastElementChild.className = "borderRight";
+                break;
+            case 5:
+                numberSix.firstElementChild.className = "borderTop borderLeft borderBottom";
+                numberSix.lastElementChild.className = "borderRight borderBottom";
+                break;
+            case 6:
+                numberSix.firstElementChild.className = "borderLeft borderBottom borderTop";
+                numberSix.lastElementChild.className = "borderRight borderLeft borderBottom";
+                break;
+            case 7:
+                numberSix.firstElementChild.className = "borderTop borderRight borderBottom";
+                numberSix.lastElementChild.className = "borderRight";
+                break;
+            case 8:
+                numberSix.firstElementChild.className = "borderTop borderLeft borderBottom borderRight";
+                numberSix.lastElementChild.className = "borderLeft borderBottom borderRight";
+                break;
+            case 9:
+                numberSix.firstElementChild.className = "borderTop borderLeft borderBottom borderRight";
+                numberSix.lastElementChild.className = "borderBottom borderRight";
+                break;
+            default:
+                numberSix.firstElementChild.className = "";
+                numberSix.lastElementChild.className = "";
+                break;
+        }
+        switch (firstSeconds) {
+            case 0:
+                numberSeven.firstElementChild.className = "borderTop borderLeft borderRight";
+                numberSeven.lastElementChild.className = "borderBottom borderLeft borderRight";
+                break;
+            case 1:
+                numberSeven.firstElementChild.className = "borderLeft";
+                numberSeven.lastElementChild.className = "borderLeft";
+                break;
+            case 2:
+                numberSeven.firstElementChild.className = "borderTop borderRight borderBottom";
+                numberSeven.lastElementChild.className = "borderLeft borderBottom";
+                break;
+            case 3:
+                numberSeven.firstElementChild.className = "borderTop borderRight borderBottom";
+                numberSeven.lastElementChild.className = "borderRight borderBottom";
+                break;
+            case 4:
+                numberSeven.firstElementChild.className = "borderLeft borderRight borderBottom";
+                numberSeven.lastElementChild.className = "borderRight";
+                break;
+            case 5:
+                numberSeven.firstElementChild.className = "borderTop borderLeft borderBottom";
+                numberSeven.lastElementChild.className = "borderRight borderBottom";
+                break;
+            case 6:
+                numberSeven.firstElementChild.className = "borderLeft borderBottom borderTop";
+                numberSeven.lastElementChild.className = "borderRight borderLeft borderBottom";
+                break;
+            case 7:
+                numberSeven.firstElementChild.className = "borderTop borderRight borderBottom";
+                numberSeven.lastElementChild.className = "borderRight";
+                break;
+                numberSeven.firstElementChild.className = "borderTop borderLeft borderBottom borderRight";
+                numberSeven.lastElementChild.className = "borderLeft borderBottom borderRight";
+                break;
+            case 9:
+                numberSeven.firstElementChild.className = "borderTop borderLeft borderBottom borderRight";
+                numberSeven.lastElementChild.className = "borderBottom borderRight";
+                break;
+            default:
+                numberSeven.firstElementChild.className = "";
+                numberSeven.lastElementChild.className = "";
+                break;
+        }
+        switch (secondSeconds) {
+            case 0:
+                numberHeight.firstElementChild.className = "borderTop borderLeft borderRight";
+                numberHeight.lastElementChild.className = "borderBottom borderLeft borderRight";
+                break;
+            case 1:
+                numberHeight.firstElementChild.className = "borderLeft";
+                numberHeight.lastElementChild.className = "borderLeft";
+                break;
+            case 2:
+                numberHeight.firstElementChild.className = "borderTop borderRight borderBottom";
+                numberHeight.lastElementChild.className = "borderLeft borderBottom";
+                break;
+            case 3:
+                numberHeight.firstElementChild.className = "borderTop borderRight borderBottom";
+                numberHeight.lastElementChild.className = "borderRight borderBottom";
+                break;
+            case 4:
+                numberHeight.firstElementChild.className = "borderLeft borderRight borderBottom";
+                numberHeight.lastElementChild.className = "borderRight";
+                break;
+            case 5:
+                numberHeight.firstElementChild.className = "borderTop borderLeft borderBottom";
+                numberHeight.lastElementChild.className = "borderRight borderBottom";
+                break;
+            case 6:
+                numberHeight.firstElementChild.className = "borderLeft borderBottom borderTop";
+                numberHeight.lastElementChild.className = "borderRight borderLeft borderBottom";
+                break;
+            case 7:
+                numberHeight.firstElementChild.className = "borderTop borderRight borderBottom";
+                numberHeight.lastElementChild.className = "borderRight";
+                break;
+            case 8:
+                numberHeight.firstElementChild.className = "borderTop borderLeft borderBottom borderRight";
+                numberHeight.lastElementChild.className = "borderLeft borderBottom borderRight";
+                break;
+            case 9:
+                numberHeight.firstElementChild.className = "borderTop borderLeft borderBottom borderRight";
+                numberHeight.lastElementChild.className = "borderBottom borderRight";
+                break;
+            default:
+                numberHeight.firstElementChild.className = "";
+                numberHeight.lastElementChild.className = "";
+                break;
+        }
     }, 1000)
 }
-
 timer();
