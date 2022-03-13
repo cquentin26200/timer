@@ -7,57 +7,63 @@ const numberSix = document.querySelector(".numberSix");
 const numberSeven = document.querySelector(".numberSeven");
 const numberHeight = document.querySelector(".numberHeight");
 
-let firstMinute = 1;
-let secondMinute = undefined;
-let firstSecond = 5;
-let secondSecond = 7;
+let firstMinuteCounter = 0;
+let secondMinuteCounter = undefined;
+let firstSecondCounter = 5;
+let secondSecondCounter = 7;
 
-let firstMinutes = 1;
-let secondMinutes = 3;
-let firstSeconds = 5;
-let secondSeconds = 7;
+let firstMinutesCountdown = 1;
+let secondMinutesCountdown = undefined;
+let firstSecondsCountdown = 5;
+let secondSecondsCountdown = 7;
+
+
+const realTime = document.querySelector(".realTime");
+
+let date = new Date;
+realTime.firstElementChild.innerHTML = `${date.getHours()} : ${date.getMinutes()} : ${date.getSeconds()}`;
 
 function timer () {
     setInterval(() => {
-        if (firstSecond === 0 && secondSecond === 0 && firstMinute != 0) {
-            firstSecond = 6;
-            if (firstMinute > 0 && secondMinute > 0) {
-                secondMinute--;
-            } else if (firstMinute > 0 && secondMinute === undefined) {
-                firstMinute--;
-            } else if (firstMinute > 0 && secondMinute === 0) {
-                secondMinute = undefined;
-                firstMinute = 9;
+        if (firstSecondCounter === 0 && secondSecondCounter === 0 && firstMinuteCounter != 0) {
+            firstSecondCounter = 6;
+            if (firstMinuteCounter > 0 && secondMinuteCounter > 0) {
+                secondMinuteCounter--;
+            } else if (firstMinuteCounter > 0 && secondMinuteCounter === undefined) {
+                firstMinuteCounter--;
+            } else if (firstMinuteCounter > 0 && secondMinuteCounter === 0) {
+                secondMinuteCounter = undefined;
+                firstMinuteCounter = 9;
             }
-        } else if (firstSecond > 0 && secondSecond === 0) {
-            firstSecond--;
-            secondSecond = 9;
-        } else if (secondSecond > 0) {
-            secondSecond--;
+        } else if (firstSecondCounter > 0 && secondSecondCounter === 0) {
+            firstSecondCounter--;
+            secondSecondCounter = 9;
+        } else if (secondSecondCounter > 0) {
+            secondSecondCounter--;
         }
 
-        if (secondSeconds === 9 && firstSeconds === 0) {
-            secondSeconds = 0
-            firstSeconds = 1;
-        } else if (firstSeconds > 0 && secondSeconds === 9) {
-            firstSeconds++;
-            secondSeconds = 0;
-        } else if (secondSeconds >= 0) {
-            secondSeconds++;
-        } if (firstSeconds === 6 && secondSeconds === 0) {
-            firstSeconds = 0;
-            secondSeconds = 0;
-              if (firstMinutes === 9 && secondMinutes === undefined) {
-                firstMinutes = 1;
-                secondMinutes = 0;
-            } else if (firstMinutes > 0 && secondMinutes === undefined) {
-                firstMinutes++;
+        if (secondSecondsCountdown === 9 && firstSecondsCountdown === 0) {
+            secondSecondsCountdown = 0
+            firstSecondsCountdown = 1;
+        } else if (firstSecondsCountdown > 0 && secondSecondsCountdown === 9) {
+            firstSecondsCountdown++;
+            secondSecondsCountdown = 0;
+        } else if (secondSecondsCountdown >= 0) {
+            secondSecondsCountdown++;
+        } if (firstSecondsCountdown === 6 && secondSecondsCountdown === 0) {
+            firstSecondsCountdown = 0;
+            secondSecondsCountdown = 0;
+              if (firstMinutesCountdown === 9 && secondMinutesCountdown === undefined) {
+                firstMinutesCountdown = 1;
+                secondMinutesCountdown = 0;
+            } else if (firstMinutesCountdown > 0 && secondMinutesCountdown === undefined) {
+                firstMinutesCountdown++;secondMinutesCountdown
             } else {
-                secondMinutes++;
+                firstMinutesCountdown++;
             }
         }
          
-        switch (firstMinute) {
+        switch (firstMinuteCounter) {
             case 0:
                 numberOne.firstElementChild.className = "borderTop borderLeft borderRight";
                 numberOne.lastElementChild.className = "borderBottom borderLeft borderRight";
@@ -103,7 +109,7 @@ function timer () {
                 numberOne.lastElementChild.className = "";
                 break;
         }
-        switch (secondMinute) {
+        switch (secondMinuteCounter) {
             case 0:
                 numberTwo.firstElementChild.className = "borderTop borderLeft borderRight";
                 numberTwo.lastElementChild.className = "borderBottom borderLeft borderRight";
@@ -149,7 +155,7 @@ function timer () {
                 numberTwo.lastElementChild.className = "";
                 break;
         }
-        switch (firstSecond) {
+        switch (firstSecondCounter) {
             case 0:
                 numberThree.firstElementChild.className = "borderTop borderLeft borderRight";
                 numberThree.lastElementChild.className = "borderBottom borderLeft borderRight";
@@ -195,7 +201,7 @@ function timer () {
                 numberThree.lastElementChild.className = "";
                 break;
         }
-        switch (secondSecond) {
+        switch (secondSecondCounter) {
             case 0:
                 numberFour.firstElementChild.className = "borderTop borderLeft borderRight";
                 numberFour.lastElementChild.className = "borderBottom borderLeft borderRight";
@@ -242,7 +248,7 @@ function timer () {
                 break;
         }
 
-        switch (firstMinutes) {
+        switch (firstMinutesCountdown) {
             case 0:
                 numberFive.firstElementChild.className = "borderTop borderLeft borderRight";
                 numberFive.lastElementChild.className = "borderBottom borderLeft borderRight";
@@ -288,7 +294,7 @@ function timer () {
                 numberFive.lastElementChild.className = "";
                 break;
         }
-        switch (secondMinutes) {
+        switch (secondMinutesCountdown) {
             case 0:
                 numberSix.firstElementChild.className = "borderTop borderLeft borderRight";
                 numberSix.lastElementChild.className = "borderBottom borderLeft borderRight";
@@ -334,7 +340,7 @@ function timer () {
                 numberSix.lastElementChild.className = "";
                 break;
         }
-        switch (firstSeconds) {
+        switch (firstSecondsCountdown) {
             case 0:
                 numberSeven.firstElementChild.className = "borderTop borderLeft borderRight";
                 numberSeven.lastElementChild.className = "borderBottom borderLeft borderRight";
@@ -379,7 +385,7 @@ function timer () {
                 numberSeven.lastElementChild.className = "";
                 break;
         }
-        switch (secondSeconds) {
+        switch (secondSecondsCountdown) {
             case 0:
                 numberHeight.firstElementChild.className = "borderTop borderLeft borderRight";
                 numberHeight.lastElementChild.className = "borderBottom borderLeft borderRight";
